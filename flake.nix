@@ -1,8 +1,8 @@
 {
   description = "AmbiguousTechnologies Home Manager profile";
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.0.tar.gz";
-    home-manager.url = "https://flakehub.com/f/nix-community/home-manager/0.1.0.tar.gz";
+    nixpkgs.url = "https://flakehub.com/f/nixos/nixpkgs/0.2411.*";
+    home-manager.url = "https://flakehub.com/f/nix-community/home-manager/*.tar.gz";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs =
