@@ -21,7 +21,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@main
+        with:
+          determinate: true
+      - uses: DeterminateSystems/flakehub-cache-action@main
       - uses: DeterminateSystems/flake-checker-action@main
       - run: nix run nixpkgs#home-manager -- build --flake .#user@workstation
 
@@ -33,7 +35,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@main
+        with:
+          determinate: true
+      - uses: DeterminateSystems/flakehub-cache-action@main
       - uses: DeterminateSystems/flake-checker-action@main
       - run: nix run nixpkgs#home-manager -- build --flake .#user@robot
 
@@ -46,7 +50,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: "DeterminateSystems/flakehub-push@main"
+        with:
+          determinate: true
+      - uses: DeterminateSystems/flakehub-push@main
         with:
           name: "AmbiguousTechnologies/profile"
           rolling: true
